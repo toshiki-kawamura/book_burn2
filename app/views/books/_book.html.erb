@@ -1,0 +1,13 @@
+<div class="card">
+  <%= link_to  book_path(book.id) do %>
+    <%= image_tag book.image , class:"card__img" %>
+  <% end %>
+
+  <div class="card__body">
+    <%= link_to book.title, book_path(book.id), class: :card__title%>
+    <p class="card__summary">
+      <%= book.catch_copy %>
+    </p>
+    <%= link_to book.user.name, user_path(book.user.id), class: :card__user %>
+  </div>
+</div>

@@ -3,17 +3,17 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to prototype_path(@comment.prototype)
+      redirect_to book_path(@comment.book)
     else
-      @prototype = @comment.prototype
-      @comments = @prototype.comments
-      render "prototypes/show"
+      @book = @comment.book
+      @comments = @book.comments
+      render "books/show"
     end
 
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id, prototype_id: params[:prototype_id])
+    params.require(:comment).permit(:text).merge(user_id: current_user.id, book_id: params[:book_id])
   end
 end

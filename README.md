@@ -1,14 +1,13 @@
 # テーブル設計
 
 ## users テーブル
-| column   | Type  | Options |
-|----------|-------|---------|
-|email     |string |NOT NULL |
-|password  |string |NOT NULL |
-|name      |string |NOT NULL |
-|profile   |text   |NOT NULL |
-|occupation|text   |NOT NULL |
-|position  |text   |NOT NULL |
+| column   | Type     | Options |
+|----------|----------|---------|
+|email     |string    |NOT NULL |
+|password  |string    |NOT NULL |
+|name      |string    |NOT NULL |
+|profile   |text      |NOT NULL |
+|genre_id  |integer   |NOT NULL |
 
 ### Association
 - has_many : comments
@@ -37,3 +36,4 @@
 ### Association
 - belongs_to :users
 - has_many : comments
+

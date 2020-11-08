@@ -33,13 +33,13 @@
         </div>
 
         <div class="field">
-          <%= f.label :occupation, "所属" %><br />
+          <%= f.label :occupation, "職業" %><br />
           <%= f.text_area :occupation, class: :form__text %>
         </div>
 
         <div class="field">
-          <%= f.label :position, "役職" %><br />
-          <%= f.text_area :position, class: :form__text %>
+          <%= f.label :genre_id, "好きなジャンル" %><br />
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
         </div>
 
         <div class="actions">
