@@ -1,22 +1,22 @@
 <%= form_with model: @book, local: true do |f| %>
   <div class="field">
-    <%= f.label :title, "プロトタイプの名称" %><br />
+    <%= f.label :title, "本の名前" %><br />
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :catch_copy, "キャッチコピー" %><br />
-    <%= f.text_area :catch_copy, class: :form__text %>
-  </div>
-
-  <div class="field">
-    <%= f.label :concept, "コンセプト" %><br />
-    <%= f.text_area :concept, class: :form__text %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.label :image, "本の画像" %><br />
     <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :chapter, "目次" %><br />
+    <%= f.text_area :chapter, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note, "メモ" %><br />
+    <%= f.text_area :note, class: :form__text %>
   </div>
 
   <div class="actions">
