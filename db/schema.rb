@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2020_11_08_104431) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
-    t.text "catch_copy"
-    t.text "concept"
+    t.string "chapter"
+    t.text "note"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2020_11_08_104431) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "profile", null: false
-    t.text "occupation", null: false
+    t.integer "occupation_id", null: false
     t.integer "genre_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

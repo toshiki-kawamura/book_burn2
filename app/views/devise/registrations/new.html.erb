@@ -33,8 +33,8 @@
         </div>
 
         <div class="field">
-          <%= f.label :occupation, "職業" %><br />
-          <%= f.text_area :occupation, class: :form__text %>
+          <%= f.label :occupation_id, "職業" %><br />
+          <%= f.collection_select(:occupation_id, Occupation.all, :id, :name, {}, {class:"genre-select"}) %>
         </div>
 
         <div class="field">

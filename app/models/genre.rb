@@ -19,5 +19,5 @@ class Genre < ActiveHash::Base
       { id: 17, name: 'ライトノベル' }
     ]
     include ActiveHash::Associations
-    has_many :articles
+    has_many :users
 end
