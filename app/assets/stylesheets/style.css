@@ -39,7 +39,7 @@ a {
 
 .header {
   background-color: #ffffff;
-  margin-bottom: 48px;
+  /* margin-bottom: 48px; */
   padding: 20px 0;
 
 }
@@ -47,6 +47,15 @@ a {
   width: 1024px;
   margin: 0 auto;
 }
+.wrapper {
+display: flex;
+}
+.side-bar {
+  background-color: #f78782;
+  width: 200px;
+  height: 100vh;
+}
+
 .nav {
   width: 100%;
   display: flex;

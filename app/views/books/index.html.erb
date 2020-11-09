@@ -1,5 +1,9 @@
 <main class="main">
-  <div class="inner">
+ <div class="wrapper">
+    <div class="side-bar">
+      <%= render "side_bar" %>
+    </div>
+    <div class="inner">
     <%# ログインしているときは以下を表示する %>
     <% if user_signed_in? %>
       <div class="greeting" >
@@ -11,6 +15,8 @@
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       <%= render partial: 'book', collection: @books %>
+      
+    </div>
     </div>
   </div>
 </main>
