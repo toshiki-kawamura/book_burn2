@@ -55,6 +55,9 @@ display: flex;
   width: 200px;
   height: 100vh;
 }
+.select_genre{
+  font-size: small;
+}
 
 .nav {
   width: 100%;
