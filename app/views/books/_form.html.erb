@@ -10,6 +10,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :select_genre_id, "ジャンル" %><br />
+    <%= f.collection_select(:select_genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+  </div>
+
+  <div class="field">
     <%= f.label :chapter, "目次" %><br />
     <%= f.text_area :chapter, class: :form__text %>
   </div>

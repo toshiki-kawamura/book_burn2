@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_104431) do
+ActiveRecord::Schema.define(version: 2020_11_09_053419) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 2020_11_08_104431) do
   end
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
+    t.integer "select_genre_id", null: false
     t.string "chapter"
     t.text "note"
     t.bigint "user_id"
@@ -46,10 +47,10 @@ ActiveRecord::Schema.define(version: 2020_11_08_104431) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text"
     t.bigint "user_id"
-    t.bigint "prototype_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["prototype_id"], name: "index_comments_on_prototype_id"
+    t.bigint "book_id", null: false
+    t.index ["book_id"], name: "index_comments_on_book_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -71,6 +72,6 @@ ActiveRecord::Schema.define(version: 2020_11_08_104431) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "users"
-  add_foreign_key "comments", "books", column: "prototype_id"
+  add_foreign_key "comments", "books"
   add_foreign_key "comments", "users"
 end

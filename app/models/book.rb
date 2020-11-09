@@ -6,5 +6,4 @@ class Book < ApplicationRecord
   validates :image, presence: true
 
   has_many :comments, dependent: :destroy
-
 end
