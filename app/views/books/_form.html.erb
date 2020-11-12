@@ -14,16 +14,21 @@
     <%= f.collection_select(:select_genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
 
-  <div class="field">
+  <div class="field", id="chapter_area">
     <%= f.label :chapter, "目次" %><br />
-    <%= f.text_area :chapter, class: :form__text %>
-    <p><%= f.submit "追加する", class: :form_btn %></P>
+    <%= f.text_area :chapter, id: "inputform_0", placeholder: "フォーム-0", class: :form__text %>
+
+    <div class="button">
+      <%= f.submit "フォームの追加" , id: "form_button" %>
+    </div>
   </div>
 
   <div class="field">
     <%= f.label :note, "メモ" %><br />
     <%= f.text_area :note, class: :form__text %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>

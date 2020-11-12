@@ -1,39 +1,41 @@
 # テーブル設計
 
 ## users テーブル
-| column   | Type     | Options |
-|----------|----------|---------|
-|email     |string    |NOT NULL |
-|password  |string    |NOT NULL |
-|name      |string    |NOT NULL |
-|profile   |text      |NOT NULL |
-|genre_id  |integer   |NOT NULL |
+| column      | Type     | Options |
+|-------------|----------|---------|
+|email        |string    |NOT NULL |
+|password     |string    |NOT NULL |
+|name         |string    |NOT NULL |
+|profile      |text      |NOT NULL |
+|occupation_id|integer   |NOT NULL |
+|genre_id     |integer   |NOT NULL |
 
 ### Association
 - has_many : comments
-- has_many : prototypes
+- has_many : books
 
 ## Commentsテーブル
 | column   | Type      | Options |
 |----------|-----------|---------|
 |text      |text       |         |
 |user      |references |         |
-|prototype |references |         |
+|book      |references |         |
 
 ### Association
-- belongs_to :users
-- belongs_to :prototypes
+- belongs_to :user
+- belongs_to :book
 
-## Prototypesテーブル
-| column   | Type             | Options |
-|----------|------------------|---------|
-|title     |string            |NOT NULL |
-|catch_copy|text              |NOT NULL |
-|concept   |text              |NOT NULL |
-|image     |ActiveStorageで実装|         |
-|user      |references        |         |
+## Booksテーブル
+| column        | Type             | Options |
+|---------------|------------------|---------|
+|title          |string            |NOT NULL |
+|select_genre_id|text              |NOT NULL |
+|chapter        |text              |NOT NULL |
+|image          |ActiveStorageで実装|         |
+|note           |text              |         |
+|user           |references        |         |
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 - has_many : comments
 
