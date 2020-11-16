@@ -1,6 +1,6 @@
 <%= form_with model: @book, local: true do |f| %>
   <div class="field">
-    <%= f.label :title, "本の名前" %><br />
+    <%= f.label :title, "本のタイトル" %><br />
     <%= f.text_field :title %>
   </div>
 
@@ -14,21 +14,31 @@
     <%= f.collection_select(:select_genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
 
-  <div class="field", id="chapter_area">
-    <%= f.label :chapter, "目次" %><br />
-    <%= f.text_area :chapter, id: "inputform_0", placeholder: "フォーム-0", class: :form__text %>
 
-    <div class="button">
-      <%= f.submit "フォームの追加" , id: "form_button" %>
+
+
+  <div class="field", id="chapter_area">
+      <%# <% :chapter = [] %> 
+    <%= f.label :chapter, "目次" %><br />
+    <%= f.text_area :chapter, name: "chapter[]", id: "input_form_0", class: :form__text %>
+
+    <div class="new_form", id="new_form_text">
+       <%= f.submit "フォームの追加" , id: "form_button", class: :form_button %>
     </div>
+
+        <%# <% if chapter1 != ""
+              :chapter << chapter1 
+            end%>
   </div>
+
+
+
+
 
   <div class="field">
     <%= f.label :note, "メモ" %><br />
     <%= f.text_area :note, class: :form__text %>
   </div>
-
-
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>

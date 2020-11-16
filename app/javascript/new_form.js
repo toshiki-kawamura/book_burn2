@@ -7,36 +7,23 @@ function new_form() {
   buttonArea.addEventListener('mouseout', function(){
     this.removeAttribute("style", "background-color:#FFBEDA;")
   })
-
-    // buttonInput.innerText = "No." + i;
     var i = 1 ;
-    buttonArea.innerText = "フォームの追加" + i;
     
     buttonArea.addEventListener('click', (e) => {
       e.preventDefault();
-      // const formData = new FormData(document.getElementById("inputform_0"));
-      // const XHR = new XMLHttpRequest();
-      // XHR.open("POST", "/books", true);
-      // XHR.responseType = "json";
-      // XHR.send(formData);
+      const sample=document.getElementById('chapter_area');
 
       const input_data = document.createElement('input');
-      // input_data.type = 'text_area';
-      // input_data.id = 'input_form' + i;
-      // input_data.placeholder = 'フォーム' + i;
-      // const parent = document.getElementById('chapter_area');
-      // parent.appendChild(input_data);
-      // i++ ;
+      input_data.type = 'text_area';
+      input_data.id = 'input_form' + i;
+      input_data.name = 'chapter[]';
+      input_data.setAttribute(
+        "style", "background-color: #ffe600; width: 50%; display: block; margin: 10px 0; height: 30px;"
+        );
+    
+      const parent = document.getElementById('new_form_text');
+      parent.insertBefore(input_data,buttonArea);
+      i++ ;
     });
 }
 window.addEventListener("load", new_form);
-
-// function addForm() {
-//   var input_data = document.createElement('input');
-//   input_data.type = 'text_area';
-//   input_data.id = 'inputform_' + i;
-//   input_data.placeholder = 'フォーム-' + i;
-//   var parent = document.getElementById('chapter_area');
-//   parent.appendChild(input_data);
-//   i++ ;
-// }

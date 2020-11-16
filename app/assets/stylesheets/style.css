@@ -26,7 +26,7 @@ li {
 }
 
 img {
-  max-width: 100%;
+  max-width: 60%;
   vertical-align: bottom;
 }
 
@@ -101,7 +101,15 @@ display: flex;
 }
 
 .form__text {
+  background-color: #ffe600;
   width: 50%;
+  height: 30px;
+}
+.new_form{
+  
+}
+.form_button{
+  width: 15%;
 }
 
 .field{
@@ -168,9 +176,9 @@ display: flex;
 }
 .card__user {
   display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
+  font-size: 15px;
+  color: rgb(1, 196, 59);
+  text-align: left;
   text-decoration: underline;
 }
 
