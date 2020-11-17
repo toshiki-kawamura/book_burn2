@@ -18,17 +18,12 @@
 
 
   <div class="field", id="chapter_area">
-      <%# <% :chapter = [] %> 
     <%= f.label :chapter, "目次" %><br />
     <%= f.text_area :chapter, name: "chapter[]", id: "input_form_0", class: :form__text %>
 
     <div class="new_form", id="new_form_text">
        <%= f.submit "フォームの追加" , id: "form_button", class: :form_button %>
     </div>
-
-        <%# <% if chapter1 != ""
-              :chapter << chapter1 
-            end%>
   </div>
 
 

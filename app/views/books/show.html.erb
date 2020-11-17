@@ -1,40 +1,45 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
-        <%= @prototype.title %>
+    <div class="book__wrapper">
+      <p class="book__hedding">
+        <%= @book.title %>
       </p>
-      <%= link_to @prototype.user.name, user_path(@prototype.user.id), class: :prototype__user %>
+      <%= link_to @book.user.name, user_path(@book.user.id), class: :book__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @prototype.user.id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_prototype_path(@prototype.id), class: :prototype__btn %>
-          <%= link_to "削除する", prototype_path(@prototype.id), class: "prototype__btn", method: :delete %>
+      <% if user_signed_in? && current_user.id == @book.user.id %>
+        <div class="book__manage">
+          <%= link_to "編集する", edit_book_path(@book.id), class: :book__btn %>
+          <%= link_to "削除する", book_path(@book.id), class: "book__btn", method: :delete %>
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
-        <%= image_tag @prototype.image %>
+      <div class="book__image">
+        <%= image_tag @book.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+      <div class="book__body">
+        <div class="book__detail">
+          <p class="detail__title">ジャンル</p>
           <p class="detail__message">
-            <%= @prototype.catch_copy %>
+            <%= Genre.find(@book.select_genre_id).name %>
           </p>
         </div>
-        <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
+        <div class="book__detail">
+          <p class="detail__title">目次</p>
           <p class="detail__message">
-            <%= @prototype.concept %>
+          <%# <% number = 0 %>
+            <%# <%= @book.chapter.each do |chapter|
+                puts "#{number}  #{chapter}" 
+                number += 1
+                end
+                %>
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      <div class="book__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if current_user %>
          
-          <%= form_with model: [@prototype, @comment] ,local: true do |f| %>
+          <%= form_with model: [@book, @comment] ,local: true do |f| %>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text %>
