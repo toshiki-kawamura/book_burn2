@@ -11,8 +11,8 @@
 |genre_id     |integer   |NOT NULL |
 
 ### Association
-- has_many : comments
-- has_many : books
+- has_many :comments
+- has_many :books
 
 ## Commentsテーブル
 | column   | Type      | Options |
@@ -30,12 +30,20 @@
 |---------------|------------------|---------|
 |title          |string            |NOT NULL |
 |select_genre_id|text              |NOT NULL |
-|chapter        |text              |NOT NULL |
 |image          |ActiveStorageで実装|         |
 |note           |text              |         |
 |user           |references        |         |
 
 ### Association
 - belongs_to :user
-- has_many : comments
+- has_many   :comments
+- has_many   :chapters
 
+## Chaptersテーブル
+| column        | Type             | Options          |
+|---------------|------------------|------------------|
+|chapter        |text              |                  |
+|book           |references        |foreign_key: true |
+
+### Association
+- belongs_to :book
