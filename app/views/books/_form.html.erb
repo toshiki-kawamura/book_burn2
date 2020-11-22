@@ -1,4 +1,4 @@
-<%= form_with (model: @book_chapter, url: books_path, local: true) do |f| %>
+<%= form_with model: @book, local: true do |f| %>
   <div class="field">
     <%= f.label :title, "本のタイトル" %><br />
     <%= f.text_field :title %>
@@ -14,21 +14,21 @@
     <%= f.collection_select(:select_genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
   </div>
 
+<%= f.label :chapter, "目次" %><br/>
+  <div class="field_chapter">
+    <%= f.text_area :chapter, class: :form__text %>
+      <div class="check_box">
+      <%= f.label :chapter_box, "check" %><br/>
 
-
-
-  <div class="field", id="chapter_area">
-    <%= f.label :chapter, "目次" %><br />
-    <%= f.text_area :chapter, name: "chapter[]", id: "input_form_0", class: :form__text %>
-
-    <div class="new_form", id="new_form_text">
-       <%= f.submit "フォームの追加" , id: "form_button", class: :form_button %>
-    </div>
+        <%= f.radio_button :chapter_box, "未読" %> 
+        <%= f.label :chapter_box, "未読", {value: "未読", style: "display: inline-block;"} %>
+        <%= f.radio_button :chapter_box, "途中" %>
+        <%= f.label :chapter_box, "途中", {value: "途中", style: "display: inline-block;"} %>
+        <%= f.radio_button :chapter_box, "完読" %>
+        <%= f.label :chapter_box, "完読", {value: "完読", style: "display: inline-block;"} %>
+   
+      </div>
   </div>
-
-
-
-
 
   <div class="field">
     <%= f.label :note, "メモ" %><br />

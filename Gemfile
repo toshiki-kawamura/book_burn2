@@ -61,3 +61,5 @@ group :production do
 end
 gem 'active_hash'
 gem 'rename'
+gem 'cocoon'
+gem 'jquery-rails'

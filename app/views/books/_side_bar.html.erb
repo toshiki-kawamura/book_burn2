@@ -1,35 +1,68 @@
+<h2>ジャンル一覧</h2><br/>
+<div class="select_genre_all">
 
+<% if @books.find_by(select_genre_id: 2 ).present? %>
+  <P><%= link_to "文学・評論", genre_page_book_path(@books.find_by(select_genre_id: 2 )), class: :select_genre %></P>
+<% end %>
 
-<p>ジャンル一覧</p><br/>
+<% if @books.find_by(select_genre_id: 3 ).present? %>
+  <p><%= link_to "ビジネス・経済", genre_page_book_path(@books.find_by(select_genre_id: 3 )), class: :select_genre %></p>
+<% end %>
 
-<P><%= link_to "文学・評論", "#", class: :select_genre %></P>
+<% if @books.find_by(select_genre_id: 4 ).present? %>
+  <p><%= link_to "歴史・地理", genre_page_book_path(@books.find_by(select_genre_id: 4 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "ビジネス・経済", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 5 ).present? %>
+  <p><%= link_to "政治・社会", genre_page_book_path(@books.find_by(select_genre_id: 5 )), class: :select_genre %></P>
+<% end %>
 
-<p><%= link_to "歴史・地理", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 6 ).present? %>
+  <p><%= link_to "芸能・エンターテイメント", genre_page_book_path(@books.find_by(select_genre_id: 6 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "政治・社会", "#", class: :select_genre %></P>
+<% if @books.find_by(select_genre_id: 7 ).present? %>
+  <p><%= link_to "アート・建築・デザイン", genre_page_book_path(@books.find_by(select_genre_id: 7 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "芸能・エンターテイメント", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 8 ).present? %>
+  <p><%= link_to "人文・思想・宗教", genre_page_book_path(@books.find_by(select_genre_id: 8 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "アート・建築・デザイン", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 9 ).present? %>
+  <p><%= link_to "暮らし・健康・料理", genre_page_book_path(@books.find_by(select_genre_id: 9 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "人文・思想・宗教", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 10 ).present? %>
+  <p><%= link_to "サイエンス・テクノロジー", genre_page_book_path(@books.find_by(select_genre_id: 10 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "暮らし・健康・料理", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 11 ).present? %>
+  <p><%= link_to "趣味・実用", genre_page_book_path(@books.find_by(select_genre_id: 11 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "サイエンス・テクノロジー", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 12 ).present? %>
+  <p><%= link_to "教育・自己啓発", genre_page_book_path(@books.find_by(select_genre_id: 12 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "趣味・実用", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 13 ).present? %>
+  <p><%= link_to "スポーツ・アウトドア", genre_page_book_path(@books.find_by(select_genre_id: 13 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "教育・自己啓発", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 14 ).present? %>
+  <p><%= link_to "音楽", genre_page_book_path(@books.find_by(select_genre_id: 14 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "スポーツ・アウトドア", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 15 ).present? %>
+  <p><%= link_to "旅行・紀行", genre_page_book_path(@books.find_by(select_genre_id: 15 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "音楽", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 16 ).present? %>
+  <p><%= link_to "コミックス", genre_page_book_path(@books.find_by(select_genre_id: 16 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "旅行・紀行", "#", class: :select_genre %></p>
+<% if @books.find_by(select_genre_id: 17 ).present? %>
+  <p><%= link_to "ライトノベル", genre_page_book_path(@books.find_by(select_genre_id: 17 )), class: :select_genre %></p>
+<% end %>
 
-<p><%= link_to "コミックス", "#", class: :select_genre %></p>
-
-<p><%= link_to "ライトノベル", "#", class: :select_genre %></p>
+</div>

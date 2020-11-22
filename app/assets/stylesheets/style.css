@@ -18,7 +18,7 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
-  background-color: #dd5151;
+  background-color: #ffea99;
 }
 
 li {
@@ -51,12 +51,18 @@ a {
 display: flex;
 }
 .side-bar {
-  background-color: #f78782;
+  background-color: #ff7c26;
   width: 200px;
-  height: 100vh;
+  height: 100%;
+}
+.select_genre_all{
+  display: block;
+  text-align: center;
+
 }
 .select_genre{
   font-size: small;
+
 }
 
 .nav {
@@ -103,10 +109,14 @@ display: flex;
 .form__text {
   background-color: #ffe600;
   width: 50%;
-  height: 30px;
+  height: 150px;
 }
-.new_form{
-  
+.check_box{
+  margin: 1px 1px 1px 4px;
+  padding: 0px;
+}
+.field_chapter{
+  display: flex;
 }
 .form_button{
   width: 15%;
@@ -341,4 +351,10 @@ display: flex;
   .table{
     width: 100%;
   }
+}
+
+/* その他 */
+
+.button_tag{
+  display: inline-block;
 }

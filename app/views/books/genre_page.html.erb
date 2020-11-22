@@ -1,0 +1,21 @@
+<main class="main">
+ <div class="wrapper">
+    <% if user_signed_in? %>
+      <div class="inner">
+
+        <div class="greeting" >
+        <%= "#{Genre.find(@book.select_genre_id).name}のページ" %>
+        <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%>
+      </div >
+    <% end %>
+
+    <div class="card__wrapper">
+    <% @books.each do |book|%>
+      <% if book.select_genre_id == @book.select_genre_id  %>
+        <%= render partial: 'book', locals: { book: book } %>
+      <% end %>
+    <%end%>
+    </div>
+    </div>
+  </div>
+</main>

@@ -5,14 +5,14 @@
         <%= @book.title %>
       </p>
       <%= link_to @book.user.name, user_path(@book.user.id), class: :book__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+
       <% if user_signed_in? && current_user.id == @book.user.id %>
         <div class="book__manage">
           <%= link_to "編集する", edit_book_path(@book.id), class: :book__btn %>
           <%= link_to "削除する", book_path(@book.id), class: "book__btn", method: :delete %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+
       <div class="book__image">
         <%= image_tag @book.image %>
       </div>
@@ -23,19 +23,19 @@
             <%= Genre.find(@book.select_genre_id).name %>
           </p>
         </div>
+
         <div class="book__detail">
           <p class="detail__title">目次</p>
           <p class="detail__message">
-          <%= @book.chapter %>
-          <%# <% number = 0 %>
-            <%# <%= @book.chapter.each do |chapter|
-                puts "#{number}  #{chapter}" 
-                number += 1
-                end
-                %>
+          <%=  simple_format(h(@book.chapter)) %>
+          <div class="button_tag">
+          <%= radio_button_tag( "chapter_box", "radio1",[checked = true]) %>
+          <%= label_tag("chapter_box",@book.chapter_box)%>
+          </div>
           </p>
         </div>
       </div>
+
       <div class="book__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if current_user %>

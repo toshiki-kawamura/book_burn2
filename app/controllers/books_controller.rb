@@ -7,13 +7,13 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book_chapter = BookChapter.new
+    @book = Book.new
   end
 
   def create
-    @book_chapter = BookChapter.new(book_params)
-    if @book_chapter.valid?
-       @book_chapter.save
+
+    @book = Book.new(book_params)
+    if @book.save
        redirect_to root_path
     else
       render :new
@@ -32,7 +32,6 @@ class BooksController < ApplicationController
   
   def update
     book = Book.find(params[:id])
-     
     if book.update(book_params)
       redirect_to book_path
     else
@@ -47,10 +46,23 @@ class BooksController < ApplicationController
     redirect_to root_path
   end
 
+  def genre_page
+    @books = Book.all
+    @book = Book.find(params[:id])
+  end
+
 
 private
+
 def book_params
-  params.require(:book_chapter).permit(:title,:image, :select_genre_id,:note, :chapter).merge(user_id: current_user.id)
+  params.require(:book).permit(
+    :title,
+    :image, 
+    :select_genre_id,
+    :chapter,
+    :note, 
+    :chapter_box
+  ).merge(user_id: current_user.id)
 end
 
 def move_to_index
