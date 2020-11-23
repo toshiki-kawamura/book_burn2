@@ -8,11 +8,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         validates :name,          presence: true
-         validates :profile,       presence: true
-         validates :occupation_id, numericality: { other_than: 1 }
-         validates :genre_id,      numericality: { other_than: 1 }
-         has_many :comments, dependent: :destroy
-         has_many :books
-         
+  validates :name,          presence: true
+  validates :profile,       presence: true
+  validates :occupation_id, numericality: { other_than: 1 }
+  validates :genre_id,      numericality: { other_than: 1 }
+  has_many :comments, dependent: :destroy
+  has_many :books
 end

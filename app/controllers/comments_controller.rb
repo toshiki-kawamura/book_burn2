@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -7,12 +6,12 @@ class CommentsController < ApplicationController
     else
       @book = @comment.book
       @comments = @book.comments
-      render "books/show"
+      render 'books/show'
     end
-
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, book_id: params[:book_id])
   end

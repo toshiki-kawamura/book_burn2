@@ -63,3 +63,6 @@ gem 'active_hash'
 gem 'rename'
 gem 'cocoon'
 gem 'jquery-rails'
+group :development do
+  gem 'rubocop', require: false
+end

@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!,except: [:index, :show]
-  before_action :move_to_index, except: [:index, :show, :new ,:create]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :new, :create]
 
   def index
     @books = Book.all
@@ -11,10 +11,9 @@ class BooksController < ApplicationController
   end
 
   def create
-
     @book = Book.new(book_params)
     if @book.save
-       redirect_to root_path
+      redirect_to root_path
     else
       render :new
     end
@@ -29,7 +28,7 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
   end
-  
+
   def update
     book = Book.find(params[:id])
     if book.update(book_params)
@@ -37,7 +36,6 @@ class BooksController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -51,25 +49,21 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  private
 
-private
-
-def book_params
-  params.require(:book).permit(
-    :title,
-    :image, 
-    :select_genre_id,
-    :chapter,
-    :note, 
-    :chapter_box
-  ).merge(user_id: current_user.id)
-end
-
-def move_to_index
-  book = Book.find(params[:id])
-  unless user_signed_in? && current_user.id == book.user.id
-  redirect_to action: :index
+  def book_params
+    params.require(:book).permit(
+      :title,
+      :image,
+      :select_genre_id,
+      :chapter,
+      :note,
+      :chapter_box
+    ).merge(user_id: current_user.id)
   end
-end
 
+  def move_to_index
+    book = Book.find(params[:id])
+    redirect_to action: :index unless user_signed_in? && current_user.id == book.user.id
+  end
 end
