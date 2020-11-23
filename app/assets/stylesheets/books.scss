@@ -1,3 +1,28 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title-contents {
+  width: 100vw;
+  height: 80vh;
+  background-image: image-url('forest.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #adf7ad;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  position: relative;
+  z-index: 0;
+}
+
+.service-title {
+  font-size: 8vh;
+  font-family: serif;
+  position: absolute;
+  top: 50px;
+}

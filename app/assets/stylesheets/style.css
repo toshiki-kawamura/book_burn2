@@ -18,7 +18,7 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
-  background-color: #ffea99;
+  background-color: #A6C752;
 }
 
 li {
@@ -39,9 +39,7 @@ a {
 
 .header {
   background-color: #ffffff;
-  /* margin-bottom: 48px; */
   padding: 20px 0;
-
 }
 .inner {
   width: 1024px;
@@ -51,9 +49,9 @@ a {
 display: flex;
 }
 .side-bar {
-  background-color: #ff7c26;
+  background-color:#85D4E8;
   width: 200px;
-  height: 100%;
+
 }
 .select_genre_all{
   display: block;
@@ -77,23 +75,23 @@ display: flex;
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #4cae4c;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #4cae4c solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #4cae4c;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #4cae4c;
   text-decoration: none;
   user-select: none;
 }
