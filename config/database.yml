@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: protospace_30591_production
-  username: protospace_30591
-  password: <%= ENV['PROTOSPACE_30591_DATABASE_PASSWORD'] %>
+  database: book_burn2_production
+  username: book_burn2
+  password: <%= ENV['BOOK_BURN2_DATABASE_PASSWORD'] %>
