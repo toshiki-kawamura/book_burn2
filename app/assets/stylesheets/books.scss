@@ -24,5 +24,43 @@
   font-size: 8vh;
   font-family: serif;
   position: absolute;
-  top: 50px;
+  top: 20px;
+}
+
+/* フッター */
+
+.footer {
+  height: 40vh;
+  background-color: #999;
+  padding: 10px 0;
+  background-image: image-url('forest2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+  z-index: 0;
+}
+.copyright {
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: #080202;
+  font-size: 25px;
+}
+
+.bookburn_top{
+  height: 200vh;
+  background-image: image-url('bookshelf.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+.bookburn_content{
+  color: rgb(255, 255, 255);
+  font-size: 8vh;
+  font-family: serif;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }

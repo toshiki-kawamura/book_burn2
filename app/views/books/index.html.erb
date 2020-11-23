@@ -2,25 +2,42 @@
   <div class="title-contents">
     <h2 class='service-title'>
       読みたい時に読める本
+      <% if user_signed_in? %>
+      <div class="greeting" >
+        <%= "こんにちは、" %>
+        <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%>
+      </div >
+      <% end %>
     </h2>
   </div>
+  
  <div class="wrapper">
     <% if user_signed_in? %>
       <div class="side-bar">
         <%= render "side_bar" %>
       </div>
+
       <div class="inner">
-        <div class="greeting" >
-        <%= "ようこそ、" %>
-        <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%>
-      </div >
+        <h2 class="inner_title" >
+          <%= "書籍一覧" %>
+        </h2 >
+        <div class="card__wrapper">
+         <%= render partial: 'book', collection: @books %>
+        </div>
+      </div>
     <% end %>
-
-    <div class="card__wrapper">
-
-      <%= render partial: 'book', collection: @books %>
-      
-    </div>
-    </div>
   </div>
+  <% unless user_signed_in? %>
+    <div class="bookburn_top">
+      <div class="bookburn_content">
+      自分の持っている本を管理しよう。<br/>
+      全部読む必要はない<br/>
+      読みたい時に読みたいとこを読む<br/>
+      気になったところだけを読む<br/>
+      飽きたら違う本に手を出す<br/>
+      記録だけしておけばいい<br/>
+      それがコンセプト
+      </div>
+    </div>
+  <% end %>
 </main>

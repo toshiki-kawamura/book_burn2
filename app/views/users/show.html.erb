@@ -1,8 +1,8 @@
 <div class="main">
  <div class="wrapper">
-      <div class="side-bar">
-        <%= render partial: 'books/side_bar' %>
-      </div>
+      <%# <div class="side-bar">
+        <%= render partial: 'books/side_bar', action: :new %>
+      <%# </div> %> 
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
@@ -32,7 +32,6 @@
         <%= "#{@user.name}さんの本"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
         <%= render partial: 'books/book', collection: @user.books %>
       </div>
     </div>
