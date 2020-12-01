@@ -56,9 +56,6 @@ gem 'pry-rails'
 gem 'devise'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
-group :production do
-  gem 'rails_12factor'
-end
 gem 'active_hash'
 gem 'rename'
 gem 'cocoon'
@@ -67,3 +64,6 @@ group :development do
   gem 'rubocop', require: false
 end
 gem "aws-sdk-s3", require: false
+group :production do
+  gem 'unicorn', '5.4.1'
+end
