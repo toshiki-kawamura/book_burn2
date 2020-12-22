@@ -15,16 +15,21 @@
   </div>
 
   <div class="form-group">
-    <%= "目次" %><br/>
-    <table id='detail-association-insertion-point1'>
-     <%= f.fields_for :chapters do |detail| %>
-        <%= render 'chapter_item_fields', f: detail %>
-     <% end %>
-     </table>
-     <%= link_to_add_association '行を追加',f, :chapters, partial: 'chapter_item_fields', class: :co_form_btn, data: {
+    <%= "目次" %><br />
+      <table id='detail-association-insertion-point1'>
+        <%= f.fields_for :chapters do |detail| %>
+          <% render 'chapter_item_fields', f: detail %>
+        <% end %> 
+      </table>
+
+     <%= link_to_add_association '行を追加', f, :chapters, partial: 'chapter_item_fields', class: :co_form_btn,
+     data: {
       association_insertion_node: '#detail-association-insertion-point1',
-      association_insertion_method: 'append' } %>
+      association_insertion_method: 'append' } 
+      %>
   </div>
+
+
 
   <div class="check_box">
         <%= f.label :chapter_box, "check" %><br/>

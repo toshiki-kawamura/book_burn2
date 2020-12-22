@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.chapters.build
   end
 
   def create
@@ -56,9 +57,9 @@ class BooksController < ApplicationController
       :title,
       :image,
       :select_genre_id,
-      :chapter,
       :note,
-      :chapter_box
+      :chapter_box,
+      chapters_attributes:[:id, :item, :_destroy]
     ).merge(user_id: current_user.id)
   end
 
