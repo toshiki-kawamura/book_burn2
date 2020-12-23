@@ -27,13 +27,17 @@
 
         <div class="book__detail">
           <p class="detail__title">目次</p>
-          <p class="detail__message">
-            <%=  simple_format(h(@book.chapter)) %>
+          
+            <% @chapter.each do |chapter| %>
+              <p class="detail__message">
+                <%=  chapter.item %>
+              </p>
+            <% end %>
             <div class="button_tag">
               <%= radio_button_tag( "chapter_box", "radio1",[checked = true]) %>
               <%= label_tag("chapter_box",@book.chapter_box)%>
             </div>
-          </p>
+          
           <p class="detail__title">メモ</p>
           <%=  simple_format(h(@book.note)) %>
         </div>
