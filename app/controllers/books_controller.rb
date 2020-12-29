@@ -60,7 +60,7 @@ class BooksController < ApplicationController
       :select_genre_id,
       :note,
       :chapter_box,
-      chapters_attributes:[:id, :item, :_destroy]
+      chapters_attributes: [:id, :item, :_destroy]
     ).merge(user_id: current_user.id)
   end
 
